@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:textSize="24sp"
         android:inputType="text"
-        android:editable="false"
         android:gravity="right"
         android:layout_margin="16dp"/>
 
@@ -30,7 +29,8 @@
             android:layout_height="107dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:text="7" />
+            android:text="7"
+            android:textSize="35dp"/>
 
         <Button
             android:id="@+id/button8"
@@ -38,7 +38,8 @@
             android:layout_height="107dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:text="8" />
+            android:text="8"
+            android:textSize="35dp"/>
 
         <Button
             android:id="@+id/button9"
@@ -46,7 +47,8 @@
             android:layout_height="107dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:text="9" />
+            android:text="9"
+            android:textSize="35dp"/>
 
         <Button
             android:id="@+id/buttonDivide"
@@ -54,7 +56,8 @@
             android:layout_height="107dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:text="/" />
+            android:text="/"
+            android:textSize="35dp"/>
 
     </LinearLayout>
 
@@ -70,7 +73,8 @@
             android:layout_height="107dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:text="4" />
+            android:text="4"
+            android:textSize="35dp"/>
 
         <Button
             android:id="@+id/button5"
@@ -78,7 +82,8 @@
             android:layout_height="107dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:text="5" />
+            android:text="5"
+            android:textSize="35dp"/>
 
         <Button
             android:id="@+id/button6"
@@ -86,7 +91,8 @@
             android:layout_height="107dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:text="6" />
+            android:text="6"
+            android:textSize="35dp"/>
 
         <Button
             android:id="@+id/buttonMultiply"
@@ -94,7 +100,8 @@
             android:layout_height="107dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:text="*" />
+            android:text="*"
+            android:textSize="35dp"/>
 
     </LinearLayout>
 
@@ -110,7 +117,8 @@
             android:layout_height="107dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:text="1" />
+            android:text="1"
+            android:textSize="35dp"/>
 
         <Button
             android:id="@+id/button2"
@@ -118,7 +126,8 @@
             android:layout_height="107dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:text="2" />
+            android:text="2"
+            android:textSize="35dp"/>
 
         <Button
             android:id="@+id/button3"
@@ -126,7 +135,8 @@
             android:layout_height="107dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:text="3" />
+            android:text="3"
+            android:textSize="35dp"/>
 
         <Button
             android:id="@+id/buttonMinus"
@@ -134,7 +144,8 @@
             android:layout_height="107dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:text="-" />
+            android:text="-"
+            android:textSize="35dp"/>
 
     </LinearLayout>
 
@@ -150,7 +161,8 @@
             android:layout_height="107dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:text="0" />
+            android:text="0"
+            android:textSize="35dp"/>
 
         <Button
             android:id="@+id/buttonDot"
@@ -158,7 +170,8 @@
             android:layout_height="107dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:text="." />
+            android:text="."
+            android:textSize="35dp"/>
 
         <Button
             android:id="@+id/buttonEquals"
@@ -166,7 +179,8 @@
             android:layout_height="107dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:text="=" />
+            android:text="="
+            android:textSize="35dp"/>
 
         <Button
             android:id="@+id/buttonPlus"
@@ -174,7 +188,8 @@
             android:layout_height="107dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:text="+" />
+            android:text="+"
+            android:textSize="35dp"/>
 
     </LinearLayout>
     <!-- Row 5 -->
@@ -188,7 +203,8 @@
             android:layout_height="107dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:text="sqrt" />
+            android:text="√"
+            android:textSize="35dp"/>
 
         <Button
             android:id="@+id/buttonSquare"
@@ -196,7 +212,8 @@
             android:layout_height="107dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:text="^" />
+            android:text="^"
+            android:textSize="35dp"/>
 
         <Button
             android:id="@+id/buttonPercent"
@@ -204,14 +221,16 @@
             android:layout_height="107dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:text="%" />
+            android:text="%"
+            android:textSize="35dp"/>
         <Button
             android:id="@+id/buttonClear"
             android:layout_width="17dp"
             android:layout_height="107dp"
             android:layout_weight="1"
             android:background="@drawable/round_button"
-            android:text="C" />
+            android:text="C"
+            android:textSize="35dp"/>
 
     </LinearLayout>
 </LinearLayout>

@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
             case "^":
                 operand1 = Math.pow(operand1, operand2);
                 break;
-            case "sqrt":
+            case "√":
                 if (operand1 >= 0) { // Проверяем, что число неотрицательное
                     operand1 = Math.sqrt(operand1);
                     displayEditText.setText(String.valueOf(operand1));
