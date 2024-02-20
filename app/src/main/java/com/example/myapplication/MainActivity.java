@@ -131,11 +131,11 @@ public class MainActivity extends AppCompatActivity {
                 operand1 = Math.pow(operand1, operand2);
                 break;
             case "√":
-                if (operand1 >= 0) { // Проверяем, что число неотрицательное
+                if (operand1 >= 0) {
                     operand1 = Math.sqrt(operand1);
                     displayEditText.setText(String.valueOf(operand1));
                 } else {
-                    displayEditText.setText("Error"); // Отображаем ошибку, если число отрицательное
+                    displayEditText.setText("Error");
                 }
                 break;
             case "%":
