@@ -1,15 +1,19 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.math.BigDecimal;
 
 public class MainActivity extends AppCompatActivity {
 
     private EditText displayEditText;
-    private double operand1 = Double.NaN;
+    private BigDecimal operand1 = BigDecimal.ZERO;
     private String pendingOperation = "=";
     private boolean isNewNumber = true;
 
@@ -23,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 displayEditText.setText("");
-                operand1 = Double.NaN;
+                operand1 = BigDecimal.ZERO;
                 pendingOperation = "=";
                 isNewNumber = true;
             }
@@ -41,16 +45,14 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-
         findViewById(R.id.buttonSquare).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String value = displayEditText.getText().toString();
                 if (!value.isEmpty()) {
-                    double number = Double.parseDouble(value);
-                    operand1 = number;
-                    displayEditText.setText("");
-                    pendingOperation = "^";
+                    BigDecimal number = new BigDecimal(value);
+                    operand1 = number.multiply(number); // Возвести в квадрат
+                    displayEditText.setText(operand1.toString());
                 }
             }
         });
@@ -108,41 +110,43 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void performOperation(String value) {
-        double operand2 = Double.parseDouble(value);
+        BigDecimal operand2 = new BigDecimal(value);
 
         switch (pendingOperation) {
             case "=":
                 operand1 = operand2;
                 break;
             case "+":
-                operand1 += operand2;
+                operand1 = operand1.add(operand2);
                 break;
             case "-":
-                operand1 -= operand2;
+                operand1 = operand1.subtract(operand2);
                 break;
             case "*":
-                operand1 *= operand2;
+                operand1 = operand1.multiply(operand2);
                 break;
             case "/":
-                if (operand2 != 0)
-                    operand1 /= operand2;
+                if (!operand2.equals(BigDecimal.ZERO)) {
+                    operand1 = operand1.divide(operand2, 5, BigDecimal.ROUND_HALF_UP);
+                } else {
+                    Toast.makeText(this, "Ошибка: деление на ноль", Toast.LENGTH_SHORT).show();
+                    return;                }
                 break;
             case "^":
-                operand1 = Math.pow(operand1, operand2);
+                operand1 = operand1.pow(operand2.intValue());
                 break;
             case "√":
-                if (operand1 >= 0) {
-                    operand1 = Math.sqrt(operand1);
-                    displayEditText.setText(String.valueOf(operand1));
+                if (operand1.compareTo(BigDecimal.ZERO) >= 0) {
+                    operand1 = BigDecimal.valueOf(Math.sqrt(operand1.doubleValue()));
                 } else {
                     displayEditText.setText("Error");
+                    return;
                 }
                 break;
             case "%":
-                operand1 = operand1 * 0.01;
-                displayEditText.setText(String.valueOf(operand1));
+                operand1 = operand1.multiply(BigDecimal.valueOf(0.01));
                 break;
         }
-        displayEditText.setText(String.valueOf(operand1));
+        displayEditText.setText(operand1.toString());
     }
 }
